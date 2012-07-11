@@ -50,7 +50,8 @@ module Geocoder
       :cache_prefix,
       :always_raise,
       :units,
-      :distances
+      :distances,
+      :dstk_url
     ]
 
     attr_accessor *OPTIONS
@@ -79,6 +80,8 @@ module Geocoder
       # calculation options
       @units     = :mi     # :mi or :km
       @distances = :linear # :linear or :spherical
+
+      @dstk_url = "datasciencetoolkit.org"
     end
 
     instance_eval(OPTIONS.map do |option|
